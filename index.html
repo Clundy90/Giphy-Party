@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giphy Party</title>
+    <link rel="stylesheet" href="party.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Giphy Party</h1>
+
+      <form id="search-form">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Search for a GIF"
+          required
+        />
+        <button type="submit" id="search-btn">Search Giphy!</button>
+        <button type="button" id="random-btn">Surprise Me!</button>
+        <button type="button" id="remove-btn">Clear All</button>
+
+        <div class="options-container">
+          <label>
+          <label><input type="checkbox" id="party-mode" /> Party Mode</label>
+
+          <label id="vol-label">
+            Volume:
+            <input
+              type="range"
+              id="volume-control"
+              min="0"
+              max="1"
+              step="0.1"
+              value="0.5"
+            />
+          </label>
+        </div>
+
+        <audio id="party-music" loop preload="auto">
+          <source
+            src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+            type="audio/mpeg"
+          />
+        </audio>
+      </form>
+
+      <div id="gif-area"></div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="giphy.js"></script>
+  </body>
+</html>

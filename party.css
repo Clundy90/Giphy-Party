@@ -1,0 +1,192 @@
+:root {
+  --neon-pink: #ff00cc;
+  --neon-blue: #3333ff;
+  --dark-bg: #121212;
+}
+
+body {
+  background-color: var(--dark-bg);
+  color: white;
+  font-family: sans-serif;
+  text-align: center;
+  transition: background-color 1s ease; /* Smooth transition for party mode */
+}
+/* Styling the H1 to make it pop */
+h1 {
+  font-size: 4rem;
+  color: #fff;
+  text-transform: uppercase;
+  margin-top: 20px;
+  /* Multi-layered shadow for a neon glow effect */
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff,
+    0 0 42px var(--neon-pink), 0 0 82px var(--neon-pink),
+    0 0 92px var(--neon-pink);
+  letter-spacing: 5px;
+}
+
+/* The Grid Layout */
+#gif-area {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 40px;
+}
+
+/* The GIF Container "Card" */
+.gif-container {
+  position: relative;
+  background: #1e1e1e;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid #333;
+}
+
+.gif-style {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Buttons and Inputs */
+button {
+  padding: 10px 15px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+}
+
+#search-btn {
+  background: var(--neon-pink);
+  color: white;
+}
+#random-btn {
+  background: var(--neon-pink);
+  color: white;
+}
+#remove-btn {
+  background: #444;
+  color: white;
+}
+
+/* Individual Delete Button Style */
+.delete-btn {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 26px;
+  height: 26px; /* Explicitly matching width for a perfect circle */
+  background: #ff4444;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  font: bold 18px/1 sans-serif; /* The '/1' sets line-height to 1 to help centering */
+
+  /* The "Magic" centering lines */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0; /* Removes default browser button padding */
+  box-shadow: 0 2px 5px #0008;
+}
+
+/* Extra spacing for the checkboxes */
+.options-container {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap; /* Wraps to next line on small screens */
+}
+
+#vol-label {
+  font-size: 0.8rem;
+  color: #888;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Styling the slider itself */
+#volume-control {
+  cursor: pointer;
+  accent-color: var(--neon-blue); /* Colors the slider handle */
+}
+
+/* Party Mode Animation */
+/* Slow, smooth background transition (No pulsing) */
+/* Define the vibrant neon palette */
+:root {
+  --neon-pink: #ff00ff;
+  --neon-blue: #00ffff;
+  --neon-purple: #9d00ff;
+  --neon-green: #39ff14;
+}
+
+/* The "Ultra Party" Background Animation */
+@keyframes rainbow-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.party-active {
+  /* Creating a massive gradient of neon colors */
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: rainbow-flow 10s ease infinite;
+}
+
+/* Make the Title cycle through colors too */
+@keyframes text-rainbow {
+  0% {
+    color: var(--neon-pink);
+    text-shadow: 0 0 20px var(--neon-pink);
+  }
+  33% {
+    color: var(--neon-blue);
+    text-shadow: 0 0 20px var(--neon-blue);
+  }
+  66% {
+    color: var(--neon-green);
+    text-shadow: 0 0 20px var(--neon-green);
+  }
+  100% {
+    color: var(--neon-pink);
+    text-shadow: 0 0 20px var(--neon-pink);
+  }
+}
+
+.party-active h1 {
+  animation: text-rainbow 4s linear infinite;
+}
+
+/* GIF containers with changing border colors */
+.party-active .gif-container {
+  border: 4px solid white;
+  /* Hue-rotate shifts the colors of the border automatically */
+  animation: border-dance 4s linear infinite;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes border-dance {
+  0% {
+    border-color: var(--neon-pink);
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    border-color: var(--neon-pink);
+    filter: hue-rotate(360deg);
+  }
+}
